@@ -1,0 +1,39 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<p id="demo" ></p>
+<script>
+
+var var1 = setInterval(inTimer, 1000);
+var size = 5;
+var ids = document.getElementById("demo");
+function inTimer() 
+{
+	ids.innerHTML = 'TEXT GROWING';
+	ids.setAttribute('style', "font-size: " + size + "px; color: red;text-align: center;font-family:'Goblin One',cursive;position:absolute;left:45%;top:45%;");
+	size += 5;
+	if(size >= 50 )
+	{
+		clearInterval(var1);
+		var2 = setInterval(deTimer, 1000);
+	}
+}
+function deTimer() 
+{
+	size -= 5;
+	ids.innerHTML = 'TEXT SHRINKING';
+	ids.setAttribute('style', "font-size: " + size + "px; color: blue;text-align: center;font-family:'Goblin One',cursive;position:absolute;left:45%;top:45%;");
+	if(size == 5 )
+	{
+		clearInterval(var2);
+		var1=setInterval(inTimer,1000);
+	}
+}
+
+</script>
+</body>
+</html>
